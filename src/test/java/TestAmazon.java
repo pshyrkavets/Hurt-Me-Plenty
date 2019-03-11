@@ -13,20 +13,22 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
+import stepdefs.AmazonStepDefs;
 
 import java.time.Duration;
 
 public class TestAmazon {
     WebDriver driver = DriverSingleton.getDriver();
-    AmazonPage amazonPage = new AmazonPage(driver);
+    //AmazonPage amazonPage = new AmazonPage(driver);
+    AmazonStepDefs amazonStepDefs = new AmazonStepDefs();
 
     @Test(description = "I opened Amazon site")
-    public void iOpenedAmazonSite() throws InterruptedException {
+    public void openAmazonSite() throws InterruptedException {
         /*System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\Pavel_Shyrkavets\\Downloads\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();*/
-
-        amazonPage.openPage();
+        amazonStepDefs.iOpenedAmazonSite();
+        //amazonPage.openPage();
         //Thread.sleep(5000);
         //new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("a-page")));
         Wait<WebDriver> wait = new FluentWait<>(driver)

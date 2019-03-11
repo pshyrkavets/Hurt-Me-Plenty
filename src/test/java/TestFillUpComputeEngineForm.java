@@ -47,16 +47,18 @@ public class TestFillUpComputeEngineForm {
         WebElement numberOfGPUs = driver.findElement(By
                 .xpath("//*[@id=\"select_value_label_327\"]"));
         numberOfGPUs.click();
-        mouseClickByLocator("#select_option_428");
-        Thread.sleep(10000);
+
+        WebElement oneGPU = driver.findElement(By
+                .xpath("(//div[@class='md-text ng-binding'][contains(.,'1')])[56]"));
+                oneGPU.click();
+
         //GPU type: NVIDIA Tesla V100
         WebElement typeOfGPU = driver.findElement(By
                 .xpath("//*[@id=\"select_value_label_328\"]"));
         typeOfGPU.click();
         WebElement typeNVIDIATeslaV100 = driver.findElement(By
-                .xpath("//*[@id=\"select_option_371\"]"));
+                .xpath("//div[@class='md-text ng-binding'][contains(.,'NVIDIA Tesla V100')]"));
         typeNVIDIATeslaV100.click();
-        Thread.sleep(5000);
 
         //Local SSD: 2x375 Gb
         WebElement localSSD = driver.findElement(By
